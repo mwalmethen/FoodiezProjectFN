@@ -1,0 +1,179 @@
+body {
+  background-image: url(../pics/background-image.webp);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.cta-button {
+  background-color: #ffd700;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 70px;
+  width: 500px;
+  height: 100px;
+  cursor: pointer;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 5);
+  transition: background-color 0.3s;
+}
+.cta-button:hover {
+  background-color: #f4c20d;
+}
+.main-div {
+  transform: translateY(50px); /* Start slightly below */
+  opacity: 0; /* Initially hidden */
+  animation: fadeSlideIn 2s ease-in-out forwards; /* 2-second combined animation */
+}
+
+@keyframes fadeSlideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.logo-image {
+  width: 450px;
+  height: 450px;
+  border-radius: 400px;
+  margin-bottom: 20px;
+  position: relative;
+  bottom: -30%;
+  left: -34%;
+}
+.logo2-image {
+  width: 450px;
+  height: 450px;
+  border-radius: 400px;
+  position: relative;
+  right: -70%;
+  bottom: 1%;
+}
+.header-text {
+  color: white;
+  width: 950px;
+  font-size: 70px;
+  text-align: center;
+}
+.header2-div {
+  position: relative;
+  bottom: -24%;
+  right: 15%;
+  width: 650px;
+  border-radius: 50px;
+  padding: 5px;
+}
+.h2-text {
+  font-size: 70px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+  right: -20%;
+  color: white;
+}
+
+.header-div {
+  position: relative;
+  right: -24%;
+  bottom: 17%;
+  background-color: rgb(28, 28, 45);
+  border-radius: 50px;
+  padding: 5px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 5);
+}
+.user-data-form {
+  display: flex;
+  flex-direction: column;
+  height: 1000px;
+  gap: 30px;
+}
+.h2 {
+  color: white;
+  position: relative;
+  right: -30%;
+}
+
+.main-div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+.main-div2 {
+  background-image: url(../pics/background-image.webp);
+  border: none;
+  border-radius: 32px;
+  padding: 40px;
+  position: relative;
+  left: 3%;
+  width: 700px;
+  height: 400px;
+}
+
+.forget-pass-link {
+  text-align: center;
+  position: relative;
+  left: 4%;
+}
+
+.mb-4 {
+  display: flex;
+  justify-content: center;
+}
+.forget-pass-div {
+  position: relative;
+  width: 400px;
+  position: relative;
+  left: 25%;
+  bottom: 5%;
+  color: white;
+}
+.forget-pass {
+  position: relative;
+  right: -24%;
+}
+.down-emoji {
+  position: relative;
+  right: -36%;
+}
+.mb-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.register-button-div {
+  display: flex;
+  justify-content: center;
+}
+.username-bar {
+  margin-left: 12px;
+  width: 400px;
+  height: 20px;
+}
+.register-button {
+  background-color: orange;
+  color: white;
+  border-radius: 15px;
+  width: 100px;
+  height: 50px;
+  border: none;
+  transition: 1.5s;
+  cursor: pointer;
+}
+
+.label1-text {
+  color: white;
+  font-weight: bold;
+}
+.link-login {
+  margin-top: 40px;
+}

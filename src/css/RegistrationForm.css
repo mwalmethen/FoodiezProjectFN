@@ -1,0 +1,82 @@
+/* Center the form in the middle of the viewport */
+
+.headline {
+  color: blue;
+  text-align: center;
+}
+.form-container {
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  text-align: left; /* Align form content to the left */
+}
+.form-container,
+.headline {
+  transform: translateY(50px); /* Start slightly below */
+  opacity: 0; /* Initially hidden */
+  animation: fadeSlideIn 2s ease-in-out forwards; /* 2-second combined animation */
+}
+
+@keyframes fadeSlideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Style for labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Style for input fields */
+input {
+  width: 500px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Style for error messages */
+.error-message {
+  color: red;
+  margin-top: 5px;
+  display: flex;
+  align-items: center; /* Center the asterisk vertically */
+}
+
+/* Add asterisk (*) to error messages */
+.error-message::before {
+  content: "* ";
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+/* Style for the Submit button */
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Media query for responsiveness */

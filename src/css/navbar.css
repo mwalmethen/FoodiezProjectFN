@@ -1,0 +1,109 @@
+.Nav-container {
+  display: flex;
+  position: sticky;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #1e1e2f; /* Elegant dark background */
+  color: white;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+.logo-text-nav {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffd700; /* Gold for the logo text */
+  cursor: pointer;
+}
+
+.Nav-home-product {
+  display: flex;
+  gap: 25px;
+}
+
+.Nav-home-product h2 {
+  margin: 0;
+}
+
+.Nav-home-product a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+  position: relative;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.Nav-home-product a:hover {
+  color: #ffd700; /* Gold highlight */
+  transform: scale(1.1); /* Slight enlargement on hover */
+}
+
+.Nav-home-product a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ffd700; /* Underline effect on active/hover */
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+}
+
+.Nav-home-product a:hover::after,
+.Nav-home-product a.active::after {
+  width: 100%; /* Underline expands on hover or active */
+}
+
+.Nav-home-product a.active {
+  color: #ffd700; /* Active link color */
+}
+
+@media (max-width: 768px) {
+  .Nav-home-product {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    gap: 15px;
+    background-color: #282845; /* Slightly darker background */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .Nav-home-product.active {
+    display: flex; /* Show menu on toggle */
+  }
+
+  .Nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+  }
+
+  .Nav-toggle div {
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: transform 0.3s;
+  }
+
+  .Nav-toggle.active div:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+
+  .Nav-toggle.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .Nav-toggle.active div:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+}
