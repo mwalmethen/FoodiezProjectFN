@@ -5,6 +5,9 @@ import reportWebVitals from "./reportWebVitals";
 import { Navbar } from "./components/Navbar";
 import Register from "./components/Register";
 import Home from "./components/Home";
+import Login from "./components/Login";
+import CategoryList from "./components/CategoryList";
+import RecipeDetail from "./components/RecipeDetail";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +25,33 @@ const router = createBrowserRouter([
       <div>
         <Navbar />
         <Register />,
+      </div>
+    ),
+  },
+  {
+    path: "/login",
+    element: (
+      <div>
+        <Navbar />
+        <Login />,
+      </div>
+    ),
+  },
+  {
+    path: "/categories",
+    element: (
+      <div>
+        <Navbar />
+        <CategoryList />
+      </div>
+    ),
+  },
+  {
+    path: "/details/:recipeName",
+    element: (
+      <div>
+        <Navbar />
+        <RecipeDetail />
       </div>
     ),
   },

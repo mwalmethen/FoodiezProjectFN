@@ -7,7 +7,7 @@ export const Navbar = () => {
 
   return (
     <div className="Nav-container">
-      <div className="logo-text-nav">Foodez</div>
+      <div className="logo-text-nav">Foodiez</div>
 
       <div
         className={`Nav-home-product ${menuActive ? "active" : ""}`}
@@ -23,7 +23,7 @@ export const Navbar = () => {
         </h2>
         <h2>
           <NavLink
-            to="/transactions"
+            to="/categories"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
             Categories

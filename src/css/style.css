@@ -1,8 +1,30 @@
 body {
+  margin: 0;
+  min-height: 100vh; /* Full viewport height */
   background-image: url(../pics/background-image.webp);
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  -webkit-backdrop-filter: blur(5px) brightness(60%);
+  backdrop-filter: blur(5px) brightness(60%);
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
+.main-category-div {
+  width: 100%;
+  height: 100%;
+  transform: translateY(50px); /* Start slightly below */
+  opacity: 0; /* Initially hidden */
+  animation: fadeSlideIn 4s ease-in-out forwards; /* 2-second combined animation */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; /* Allow scrolling within the content area */
+  padding: 20px;
+}
+
 .cta-button {
   background-color: #ffd700;
   color: #333;
@@ -18,13 +40,24 @@ body {
 }
 .cta-button:hover {
   background-color: #f4c20d;
+  opacity: 0.8;
 }
 .main-div {
   transform: translateY(50px); /* Start slightly below */
   opacity: 0; /* Initially hidden */
-  animation: fadeSlideIn 2s ease-in-out forwards; /* 2-second combined animation */
+  animation: fadeSlideIn 4s ease-in-out forwards; /* 2-second combined animation */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; /* Allow scrolling within the content area */
+  padding: 20px;
 }
-
+.categoryform-div-category {
+  position: relative;
+  right: -31%;
+}
 @keyframes fadeSlideIn {
   from {
     transform: translateY(50px);
@@ -42,16 +75,17 @@ body {
   border-radius: 400px;
   margin-bottom: 20px;
   position: relative;
-  bottom: -30%;
-  left: -34%;
+  bottom: -65%;
+  left: -35%;
 }
 .logo2-image {
   width: 450px;
   height: 450px;
   border-radius: 400px;
   position: relative;
-  right: -70%;
-  bottom: 1%;
+  right: -120%;
+  bottom: -35%;
+  top: -50%;
 }
 .header-text {
   color: white;
@@ -61,7 +95,8 @@ body {
 }
 .header2-div {
   position: relative;
-  bottom: -24%;
+  display: flex;
+  bottom: -55%;
   right: 15%;
   width: 650px;
   border-radius: 50px;
@@ -78,23 +113,131 @@ body {
 
 .header-div {
   position: relative;
-  right: -24%;
-  bottom: 17%;
+  right: -22%;
+  bottom: -11%;
   background-color: rgb(28, 28, 45);
   border-radius: 50px;
   padding: 5px;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 5);
 }
-.user-data-form {
-  display: flex;
-  flex-direction: column;
-  height: 1000px;
-  gap: 30px;
-}
-.h2 {
+.recipes-home-div {
+  background-color: rgb(28, 28, 45);
+  border-radius: 50px;
+  font-size: 30px;
+  padding: 10px;
+  text-align: center;
   color: white;
   position: relative;
-  right: -30%;
+  bottom: -27%;
+}
+.category-home-div {
+  background-color: rgb(28, 28, 45);
+  border-radius: 50px;
+  font-size: 30px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  position: relative;
+  right: -26%;
+  margin-top: 40px;
+  width: 700px;
+  margin-top: 90px;
+  animation: fadeSlideIn 4s ease-in-out forwards;
+}
+@keyframes fadeText {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
+}
+.recipe-list {
+  display: flex;
+  gap: 40px;
+}
+.category-list {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 200px;
+}
+
+.recipes-div {
+  background-color: rgb(28, 28, 45);
+  text-align: center;
+  color: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 32px;
+  animation: fadeText 10s infinite; /* Set same duration as h1 */
+}
+.recipes-div-detail {
+  background-color: rgb(28, 28, 45);
+  text-align: center;
+  color: white;
+  width: 60%;
+  height: 900px;
+  position: relative;
+  right: -19%;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 32px;
+  overflow-y: scroll;
+  animation: fadeSlideIn 4s ease-in-out forwards;
+}
+.category-div {
+  background-color: rgb(28, 28, 45);
+  text-align: center;
+  color: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 32px;
+  animation: fadeSlideIn 4s ease-in-out forwards;
+}
+.recipe-card {
+  position: relative;
+  bottom: -100%;
+}
+.category-card {
+  position: relative;
+  bottom: 0%;
+  right: -80%;
+  margin-bottom: 20px;
+  animation: fadeSlideIn 4s ease-in-out forwards;
+}
+.recipe-images {
+  width: 250px;
+  height: 250px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  transition: 1s;
+  cursor: pointer;
+}
+.recipe-images-detail {
+  width: 500px;
+  height: 500px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  transition: 1s;
+  cursor: pointer;
+}
+.category-images {
+  width: 250px;
+  height: 250px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  transition: 1s;
+  cursor: pointer;
 }
 
 .main-div {
@@ -103,77 +246,4 @@ body {
   flex-direction: column;
   align-items: center;
   height: 100vh;
-}
-.main-div2 {
-  background-image: url(../pics/background-image.webp);
-  border: none;
-  border-radius: 32px;
-  padding: 40px;
-  position: relative;
-  left: 3%;
-  width: 700px;
-  height: 400px;
-}
-
-.forget-pass-link {
-  text-align: center;
-  position: relative;
-  left: 4%;
-}
-
-.mb-4 {
-  display: flex;
-  justify-content: center;
-}
-.forget-pass-div {
-  position: relative;
-  width: 400px;
-  position: relative;
-  left: 25%;
-  bottom: 5%;
-  color: white;
-}
-.forget-pass {
-  position: relative;
-  right: -24%;
-}
-.down-emoji {
-  position: relative;
-  right: -36%;
-}
-.mb-6 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  color: white;
-  font-weight: bold;
-}
-
-.register-button-div {
-  display: flex;
-  justify-content: center;
-}
-.username-bar {
-  margin-left: 12px;
-  width: 400px;
-  height: 20px;
-}
-.register-button {
-  background-color: orange;
-  color: white;
-  border-radius: 15px;
-  width: 100px;
-  height: 50px;
-  border: none;
-  transition: 1.5s;
-  cursor: pointer;
-}
-
-.label1-text {
-  color: white;
-  font-weight: bold;
-}
-.link-login {
-  margin-top: 40px;
 }

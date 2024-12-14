@@ -1,7 +1,23 @@
-/* Center the form in the middle of the viewport */
-
 .headline {
-  color: blue;
+  color: white;
+  width: 300px;
+  text-align: center;
+  position: relative;
+  right: -40%;
+  border-radius: 40px;
+  padding: 10px;
+  background-color: orange;
+  text-align: center;
+}
+.headline2 {
+  color: white;
+  width: 300px;
+  text-align: center;
+  position: relative;
+  right: -20%;
+  border-radius: 40px;
+  padding: 10px;
+  background-color: orange;
   text-align: center;
 }
 .form-container {
@@ -10,19 +26,21 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: white;
+  background-color: #1e1e2f;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
   text-align: left; /* Align form content to the left */
 }
+
 .form-container,
 .headline {
   transform: translateY(50px); /* Start slightly below */
   opacity: 0; /* Initially hidden */
-  animation: fadeSlideIn 2s ease-in-out forwards; /* 2-second combined animation */
+  animation: fadeSlideIn 4s ease-in-out forwards; /* 2-second combined animation */
 }
 
 @keyframes fadeSlideIn {
@@ -41,6 +59,7 @@ label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  color: white;
 }
 
 /* Style for input fields */
@@ -70,7 +89,7 @@ input {
 
 /* Style for the Submit button */
 button[type="submit"] {
-  background-color: #007bff;
+  background-color: orange;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -78,5 +97,13 @@ button[type="submit"] {
   cursor: pointer;
   font-size: 18px;
 }
-
+.Formik-button {
+  display: flex;
+  gap: 55px;
+  color: white;
+}
+.color-link {
+  color: orange;
+  cursor: pointer;
+}
 /* Media query for responsiveness */

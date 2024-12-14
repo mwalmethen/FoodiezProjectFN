@@ -93,8 +93,14 @@ const Register = () => {
             ) : null}
           </div>
 
-          <div>
+          <div className="Formik-button">
             <button type="submit">Register</button>
+            <h3>
+              already have an account?{" "}
+              <Link className="color-link" to="/login">
+                sign in
+              </Link>
+            </h3>
           </div>
         </form>
       </div>
