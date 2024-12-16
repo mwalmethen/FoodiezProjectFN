@@ -1,0 +1,152 @@
+/* User Page Wrapper */
+.user-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  animation: fadeSlideIn 2s ease-in-out forwards;
+}
+
+.recipe-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover; /* Ensures the image fits within the dimensions */
+  border-radius: 8px; /* Optional: Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Shadow effect */
+}
+
+/* Header Styles */
+.user-header {
+  width: 50%;
+  border-radius: 50px;
+  background-color: #1e1e2f;
+  color: orange;
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.user-header h1 {
+  font-size: 2rem;
+}
+.btn-div {
+  display: flex;
+  gap: 10px;
+  position: relative;
+  right: -1%;
+  margin-top: 20px;
+}
+
+/* Content Section */
+.user-content {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* User Section (My Recipes, Favorite Recipes) */
+.user-section {
+  flex: 1;
+  min-width: 300px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.user-section h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: orange;
+}
+
+/* Recipe List */
+.user-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recipe-item {
+  display: flex;
+  gap: 15px; /* Space between image and details */
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.recipe-item:last-child {
+  border-bottom: none;
+}
+
+.recipe-item h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* Buttons */
+.btn-group {
+  display: flex;
+  gap: 10px; /* Add spacing between buttons */
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Button Variants */
+.view-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.remove-btn {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* Button Hover Effects */
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .user-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .user-section {
+    width: 100%;
+  }
+
+  .recipe-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .btn-group {
+    justify-content: flex-start; /* Align buttons to the left */
+    gap: 10px;
+  }
+}

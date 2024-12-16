@@ -1,0 +1,144 @@
+.recipe-list {
+  background-color: transparent;
+  position: relative;
+  width: 992px;
+  height: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  left: 10%;
+  overflow: scroll;
+}
+
+.recipe-card {
+  width: 350px;
+  height: 250px;
+  bottom: 0;
+  animation-iteration-count: 0;
+  width: 300px;
+}
+
+.recipes-div {
+  width: 90%;
+  height: 90%;
+  border-radius: 12px;
+}
+
+.recipes-div:hover {
+  box-shadow: 0 0 20px lightblue;
+}
+
+.recipes-div:not(hover) {
+  box-shadow: 0 0 2px lightblue;
+}
+
+.recipe-images {
+  width: 25px;
+  height: 25px;
+}
+
+.recipes-div > div {
+  background-image: url(../pics/recipeDetails.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  width: 500px;
+  position: relative;
+}
+
+.recipes-div > div {
+  height: 600px;
+  width: 500px;
+  position: relative;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 5px lightgreen;
+  border: 2px solid rgb(28, 28, 45);
+}
+
+.recipes-div > div .recipe-name {
+  position: absolute;
+  top: 180px;
+  left: 180px;
+  color: dimgrey;
+  font-weight: 900;
+  font-size: larger;
+  font-family: system-ui;
+}
+
+.recipes-div > div .ingredients-container {
+  position: absolute;
+  width: 200px;
+  height: 150px;
+  top: 210px;
+  left: 205px;
+}
+
+.recipes-div > div .ingredients {
+  padding-block: 3px;
+  position: absolute;
+  top: 210px;
+  left: 200px;
+}
+
+.ingredient-name {
+  padding-inline: 10px;
+  color: darkslategrey;
+  font-weight: 700;
+  font-size: larger;
+  font-family: system-ui;
+}
+
+.ingredient-amount,
+.ingredient-type {
+  padding-left: 2px;
+  color: darkslategrey;
+  font-weight: 400;
+  font-size: larger;
+  font-family: system-ui;
+}
+
+.recipes-div > button {
+  margin: 1rem 0;
+  border: 0;
+  border-radius: 40px;
+  /* padding: 2rem 3rem; */
+  /* font-size: 1.2rem; */
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.recipes-div > button:hover {
+  background: none;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.options {
+  /* background: gold; */
+  height: 60px;
+  width: 300px;
+  position: absolute;
+  top: 545px;
+  left: 100px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.option {
+  display: inline-block;
+  background-color: #fff;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  filter: brightness(0.5);
+}
+
+.option > img {
+  height: 40px;
+  width: 40px;
+}

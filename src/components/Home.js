@@ -23,9 +23,7 @@ const Home = () => {
             Popular <span>Recipes</span> You Can't Miss
           </h2>
         </div>
-        <div>
-          <RecipeList />
-        </div>
+
         <div className="header2-div">
           <Link to="/register">
             <button class="cta-button">Join us now!</button>

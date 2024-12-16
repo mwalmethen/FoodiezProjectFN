@@ -8,7 +8,12 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import CategoryList from "./components/CategoryList";
 import RecipeDetail from "./components/RecipeDetail";
+import RecipeItem from "./components/RecipeItem";
+import RecipeList from "./components/RecipeList";
+import User from "./components/User";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
@@ -47,6 +52,24 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/recipes",
+    element: (
+      <div>
+        <Navbar />
+        <RecipeList />
+      </div>
+    ),
+  },
+  {
+    path: "/profile",
+    element: (
+      <div>
+        <Navbar />
+        <User />
+      </div>
+    ),
+  },
+  {
     path: "/details/:recipeName",
     element: (
       <div>
@@ -56,12 +79,20 @@ const router = createBrowserRouter([
     ),
   },
 ]);
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(
+//   <React.StrictMode>
+//     <RouterProvider router={router} />
+//   </React.StrictMode>,
+//   document.getElementById("root")
+// );
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-  document.getElementById("root")
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

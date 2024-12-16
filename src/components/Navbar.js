@@ -31,7 +31,7 @@ export const Navbar = () => {
         </h2>
         <h2>
           <NavLink
-            to="/users"
+            to="/recipes"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
             Recipes
@@ -42,7 +42,7 @@ export const Navbar = () => {
             to="/profile"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
-            Ingredients
+            MyProfile
           </NavLink>
         </h2>
       </div>

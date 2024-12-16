@@ -7,10 +7,11 @@ async function getAllCategories() {
   return response;
 }
 // create new category
-async function addCategory(data) {
-  const response = await instance.post("/categories", data);
+async function addCategory(formData) {
+  console.log(formData);
+  const response = await instance.post("/categories", formData);
   console.log("addCategory", response);
-  return response;
+  return response.data;
 }
 
 export { getAllCategories, addCategory };

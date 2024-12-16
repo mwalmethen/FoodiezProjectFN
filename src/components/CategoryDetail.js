@@ -1,5 +1,4 @@
 import React from "react";
-import CategoryForm from "./CategoryForm";
 
 const CategoryDetail = ({ category }) => {
   return (

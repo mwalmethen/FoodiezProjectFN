@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import recipes from "../DummyData";
-import { Link } from "react-router-dom";
 
 const RecipeDetail = () => {
   const { recipeName } = useParams();

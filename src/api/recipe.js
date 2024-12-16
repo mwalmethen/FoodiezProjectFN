@@ -1,7 +1,7 @@
 import instance from "./axios";
 
 async function getAllRecipes() {
-  const response = await instance.get("/foodiez/api/recipes");
+  const response = await instance.get("/recipes");
   console.log(response);
   return response;
 }
@@ -28,3 +28,4 @@ async function deleteRecipe(id) {
   console.log("deleteRecipe", response);
   return response;
 }
+export { getAllRecipes, updateRecipeById, addRecipe, deleteRecipe };

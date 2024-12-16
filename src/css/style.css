@@ -15,7 +15,7 @@ body {
   height: 100%;
   transform: translateY(50px); /* Start slightly below */
   opacity: 0; /* Initially hidden */
-  animation: fadeSlideIn 4s ease-in-out forwards; /* 2-second combined animation */
+  animation: fadeSlideIn 2s ease-in-out forwards; /* 2-second combined animation */
   position: absolute;
   top: 0;
   left: 0;
@@ -45,7 +45,7 @@ body {
 .main-div {
   transform: translateY(50px); /* Start slightly below */
   opacity: 0; /* Initially hidden */
-  animation: fadeSlideIn 4s ease-in-out forwards; /* 2-second combined animation */
+  animation: fadeSlideIn 2s ease-in-out forwards; /* 2-second combined animation */
   position: absolute;
   top: 0;
   left: 0;
@@ -53,6 +53,14 @@ body {
   height: 100%;
   overflow-y: auto; /* Allow scrolling within the content area */
   padding: 20px;
+}
+@media (min-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+  .logo {
+    width: 20vw;
+  }
 }
 .categoryform-div-category {
   position: relative;
