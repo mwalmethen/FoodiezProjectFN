@@ -11,6 +11,7 @@ import RecipeDetail from "./components/RecipeDetail";
 import RecipeItem from "./components/RecipeItem";
 import RecipeList from "./components/RecipeList";
 import User from "./components/User";
+import RecipeDetailTest from "./components/RecipeDetailTest";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
@@ -74,7 +75,7 @@ const router = createBrowserRouter([
     element: (
       <div>
         <Navbar />
-        <RecipeDetail />
+        <RecipeDetailTest />
       </div>
     ),
   },

@@ -1,0 +1,54 @@
+/* Parent Container: Form */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between form elements */
+  align-items: center; /* Center align content horizontally */
+  justify-content: center; /* Center vertically */
+  margin: 0 auto; /* Horizontal centering */
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  background-color: #1e1e2f;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Header Styling */
+.headline2 {
+  text-align: center;
+  background-color: orange;
+  color: white;
+  position: relative;
+  width: 350px;
+  left: 2%;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+/* Input Fields */
+input {
+  width: 100%; /* Stretch to full width of container */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Submit Button */
+button {
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ff9800;
+}

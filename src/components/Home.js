@@ -5,6 +5,8 @@ import logo2 from "../pics/thumbsuplogo.webp";
 import { Link } from "react-router-dom";
 import RecipeList from "./RecipeList";
 import RecipeItem from "./RecipeItem";
+import RecipeItemTest from "./RecipeItemTest";
+import RecipeTest from "./RecipeTest";
 
 const Home = () => {
   return (
@@ -29,6 +31,9 @@ const Home = () => {
             <button class="cta-button">Join us now!</button>
             <img className="logo2-image" src={logo2} />
           </Link>
+        </div>
+        <div>
+          <RecipeTest />
         </div>
       </div>
     </div>

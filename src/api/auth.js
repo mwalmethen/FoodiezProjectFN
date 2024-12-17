@@ -1,13 +1,13 @@
 import instance from "./axios";
 const register = async (formData) => {
-  const data = await instance.post("/foodiez/api/register", formData);
+  const data = await instance.post("/register", formData);
   // setToken("token", data.token);
   localStorage.setItem("token", data.token);
   console.log("register data", data);
   return data;
 };
 const login = async (formData) => {
-  const data = await instance.post("/foodiez/api/login", formData);
+  const data = await instance.post("/login", formData);
   if (data.token) {
     localStorage.setItem("token", data.token);
   }

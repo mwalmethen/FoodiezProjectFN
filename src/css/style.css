@@ -24,6 +24,11 @@ body {
   overflow-y: auto; /* Allow scrolling within the content area */
   padding: 20px;
 }
+.main-category-div2 {
+  position: relative;
+  right: 50%;
+  bottom: -50%;
+}
 
 .cta-button {
   background-color: #ffd700;
@@ -34,6 +39,8 @@ body {
   font-size: 70px;
   width: 500px;
   height: 100px;
+  position: relative;
+  bottom: -25%;
   cursor: pointer;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 5);
   transition: background-color 0.3s;
@@ -92,8 +99,8 @@ body {
   border-radius: 400px;
   position: relative;
   right: -120%;
-  bottom: -35%;
-  top: -50%;
+  bottom: -40%;
+  top: -20%;
 }
 .header-text {
   color: white;
@@ -104,7 +111,7 @@ body {
 .header2-div {
   position: relative;
   display: flex;
-  bottom: -55%;
+  bottom: -80%;
   right: 15%;
   width: 650px;
   border-radius: 50px;
@@ -136,7 +143,7 @@ body {
   text-align: center;
   color: white;
   position: relative;
-  bottom: -27%;
+  bottom: -33%;
 }
 .category-home-div {
   background-color: rgb(28, 28, 45);
@@ -150,6 +157,18 @@ body {
   margin-top: 40px;
   width: 700px;
   margin-top: 90px;
+  animation: fadeSlideIn 4s ease-in-out forwards;
+}
+.category-home-div2 {
+  background-color: rgb(28, 28, 45);
+  border-radius: 50px;
+  font-size: 30px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  position: relative;
+  right: -22%;
+  width: 700px;
   animation: fadeSlideIn 4s ease-in-out forwards;
 }
 @keyframes fadeText {
@@ -172,6 +191,15 @@ body {
   flex-wrap: wrap;
   position: relative;
   margin-bottom: 200px;
+}
+.category-list2 {
+  display: flex;
+  gap: 40px;
+}
+.category-card2 {
+  position: relative;
+  bottom: 20%;
+  right: -170%;
 }
 
 .recipes-div {

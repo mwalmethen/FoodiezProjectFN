@@ -7,10 +7,7 @@ async function getAllRecipes() {
 }
 async function updateRecipeById(id, updatedData) {
   try {
-    const response = await instance.put(
-      `/foodiez/api/recipes${id}`,
-      updatedData
-    );
+    const response = await instance.put(`/recipes${id}`, updatedData);
     console.log(response.data); // Log the updated data for debugging
     return response.data; // Return the updated ingredient data
   } catch (error) {
@@ -19,12 +16,12 @@ async function updateRecipeById(id, updatedData) {
   }
 }
 async function addRecipe(formData) {
-  const response = await instance.post("/foodiez/api/recipes", formData);
+  const response = await instance.post("/recipes", formData);
   console.log("addRecipe", response);
   return response;
 }
 async function deleteRecipe(id) {
-  const response = await instance.delete(`/foodiez/api/recipes/${id}`);
+  const response = await instance.delete(`/recipes/${id}`);
   console.log("deleteRecipe", response);
   return response;
 }

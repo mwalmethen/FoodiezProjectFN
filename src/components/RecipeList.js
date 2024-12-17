@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 // import recipes from "../DummyData";
 import RecipeDetail from "./RecipeDetail";
 import RecipeItem from "./RecipeItem";
-import { Field, Form, Formik } from "formik";
 import { Navigate } from "react-router";
 // import { checkToken } from '../API/storage'
 import { getAllRecipes } from "../api/recipe";
@@ -26,7 +25,6 @@ const RecipeList = () => {
     enabled: true,
   });
 
-  // >> Array of Transactions Objects
   const recipes = isSuccess
     ? data?.map((recipe) => <RecipeItem recipe={recipe} />)
     : null;

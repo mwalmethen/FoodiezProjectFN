@@ -9,17 +9,7 @@
   background-color: orange;
   text-align: center;
 }
-.headline2 {
-  color: white;
-  width: 300px;
-  text-align: center;
-  position: relative;
-  right: -20%;
-  border-radius: 40px;
-  padding: 10px;
-  background-color: orange;
-  text-align: center;
-}
+
 .form-container {
   width: 500px;
   display: flex;
