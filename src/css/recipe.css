@@ -10,6 +10,47 @@
   left: 10%;
   overflow: scroll;
 }
+.category-filter {
+  position: relative;
+  right: -25%;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+.type-selector {
+  width: 300px;
+  height: 40px;
+}
+.search-bar {
+  width: 400px;
+  border-radius: 40px;
+  position: relative;
+  right: -35%;
+  bottom: -30%;
+}
+.btn-btn-refresh {
+  position: relative;
+  right: -43.5%;
+  border-radius: 40px;
+  width: 200px;
+  margin-top: 15px;
+  margin-bottom: 80px;
+}
+.text-h3 {
+  text-align: center;
+  color: orange;
+  position: relative;
+}
+.text-h3-div {
+  background-color: rgb(28, 28, 45);
+  width: 300px;
+  height: 70px;
+  padding: 10px;
+  border-radius: 30px;
+  position: relative;
+  right: -40%;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
 
 .recipe-card {
   width: 350px;
@@ -18,8 +59,11 @@
   animation-iteration-count: 0;
   width: 300px;
 }
-
-.recipes-div {
+.chef-filter {
+  display: flex;
+  flex-direction: row;
+}
+.chef-filter > .recipes-div {
   width: 90%;
   height: 90%;
   border-radius: 12px;
@@ -34,8 +78,8 @@
 }
 
 .recipe-images {
-  width: 25px;
-  height: 25px;
+  width: 95px;
+  height: 95px;
 }
 
 .recipes-div > div {
@@ -99,25 +143,48 @@
   font-family: system-ui;
 }
 
+.delete > div button,
 .recipes-div > button {
-  margin: 1rem 0;
+  margin-inline: 5px;
   border: 0;
   border-radius: 40px;
-  /* padding: 2rem 3rem; */
+  padding: 10px 10px;
   /* font-size: 1.2rem; */
   font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
   white-space: nowrap;
+  width: 80px;
 }
 
+/* .delete > div button,:hover, */
 .recipes-div > button:hover {
   background: none;
   color: #fff;
   border: 1px solid #fff;
 }
 
-.options {
+.edit-btn {
+  background-color: dodgerblue;
+}
+
+.edit-btn:hover {
+  background: none;
+  color: dodgerblue;
+  border: 1px solid dodgerblue;
+}
+
+.delete-btn {
+  background-color: tomato;
+}
+
+.delete-btn:hover {
+  background: none;
+  color: tomato;
+  border: 1px solid tomato;
+}
+
+.delete > div button .options {
   /* background: gold; */
   height: 60px;
   width: 300px;
@@ -141,4 +208,12 @@
 .option > img {
   height: 40px;
   width: 40px;
+}
+
+.recipes-div > div.edit,
+.recipes-div > div.delete {
+  background-image: none;
+  background-color: #161616;
+  height: 300px;
+  width: 300px;
 }

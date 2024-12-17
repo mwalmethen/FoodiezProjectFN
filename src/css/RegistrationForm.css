@@ -30,7 +30,7 @@
 .headline {
   transform: translateY(50px); /* Start slightly below */
   opacity: 0; /* Initially hidden */
-  animation: fadeSlideIn 4s ease-in-out forwards; /* 2-second combined animation */
+  animation: fadeSlideIn 0.7s ease-in-out forwards; /* 2-second combined animation */
 }
 
 @keyframes fadeSlideIn {

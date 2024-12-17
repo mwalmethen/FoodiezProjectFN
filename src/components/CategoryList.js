@@ -7,29 +7,29 @@ import { getAllCategories, addCategory } from "../api/category";
 import { useQuery, useMutation } from "@tanstack/react-query";
 
 const CategoryList = () => {
-  // const [name, setName] = useState("");
-  // const [image, setImage] = useState(null); // Store the file object, not the path
+  const [name, setName] = useState("");
+  const [image, setImage] = useState(null); // Store the file object, not the path
 
-  // const { data } = useQuery({
-  //   queryKey: ["categoryList"], // Query key
-  //   queryFn: getAllCategories, // Query function
-  // });
+  const { data } = useQuery({
+    queryKey: ["categoryList"], // Query key
+    queryFn: getAllCategories, // Query function
+  });
 
-  // // Adding new category
-  // const mutation = useMutation({
-  //   mutationKey: ["Data"],
-  //   mutationFn: (formData) => addCategory(formData),
-  // });
+  // Adding new category
+  const mutation = useMutation({
+    mutationKey: ["Data"],
+    mutationFn: (formData) => addCategory(formData),
+  });
 
-  // const handleSubmit = () => {
-  //   // Prepare FormData
-  //   const formData = new FormData();
-  //   formData.append("category", name);
-  //   formData.append("image", image);
+  const handleSubmit = () => {
+    // Prepare FormData
+    const formData = new FormData();
+    formData.append("category", name);
+    formData.append("image", image);
 
-  //   // Mutate with FormData
-  //   mutation.mutate(formData);
-  // };
+    // Mutate with FormData
+    mutation.mutate(formData);
+  };
 
   return (
     <div className="main-category-div">
@@ -37,7 +37,7 @@ const CategoryList = () => {
         <h2 className="category-text"> Explore Our Categories </h2>
       </div>
       <div className="category-list">
-        {categories.map((category) => (
+        {data?.map((category) => (
           <CategoryDetail key={category.id} category={category} />
         ))}
         <div className="form-container">
@@ -48,12 +48,20 @@ const CategoryList = () => {
             type="text"
             placeholder="Category Name"
             id="category"
+            onChange={(e) => setName(e.target.value)}
           />
 
           <label htmlFor="image">Upload Image</label>
-          <input name="image" type="file" id="image" />
+          <input
+            name="image"
+            type="file"
+            onChange={(e) => setImage(e.target.files[0])}
+            id="image"
+          />
 
-          <button type="submit">Submit</button>
+          <button type="submit" onClick={handleSubmit}>
+            Submit
+          </button>
         </div>
 
         {/* <div className="main-form">
