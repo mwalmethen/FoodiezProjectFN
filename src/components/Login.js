@@ -6,54 +6,66 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import "../css/RegistrationForm.css";
 
-const validationSchema = Yup.object({
-  email: Yup.string().email("Invalid email").required("Email is required"),
-  password: Yup.string()
-    .min(6, "Password must be at least 6 characters")
-    .required("Password is required"),
-});
+/*************  ✨ Codeium Command 🌟  *************/
 const Login = () => {
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
-    validationSchema,
-    onSubmit: (values) => {
-      console.log(values);
-    },
-  });
+  const [name, setName] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [error, setError] = React.useState(null);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (password === "") {
+      setError("Password is required");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        "http://192.168.2.108:3000/foodiez/api/auth/signin",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, password }),
+        }
+      );
+      const data = await response.json();
+      if (data.error) {
+        setError(data.error);
+      } else {
+        setError(null);
+        localStorage.setItem("token", data.token);
+        window.location.href = "/recipes";
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <>
       <h1 className="headline">Login Form </h1>
       <div className="form-container">
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="name">Username</label>
             <input
               type="text"
-              id="email"
-              name="email"
-              onChange={formik.handleChange}
-              value={formik.values.email}
+              id="name"
+              name="name"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
             />
-            {formik.touched.email && formik.errors.email ? (
-              <div className="error-message">{formik.errors.email}</div>
-            ) : null}
           </div>
+
           <div>
             <label htmlFor="password">Password</label>
             <input
               type="password"
               id="password"
               name="password"
-              onChange={formik.handleChange}
-              value={formik.values.password}
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
             />
-            {formik.touched.password && formik.errors.password ? (
-              <div className="error-message">{formik.errors.password}</div>
-            ) : null}
           </div>
           <div className="Formik-button">
             <button type="submit">Login</button>
@@ -65,9 +77,12 @@ const Login = () => {
             </h3>
           </div>
         </form>
+        {error && <div className="error-message">{error}</div>}
       </div>
     </>
   );
 };
 
 export default Login;
+
+/******  3338575f-7380-446a-aaec-5c5a9d9a4762  *******/
