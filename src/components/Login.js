@@ -6,7 +6,6 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import "../css/RegistrationForm.css";
 
-/*************  ✨ Codeium Command 🌟  *************/
 const Login = () => {
   const [name, setName] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -84,5 +83,3 @@ const Login = () => {
 };
 
 export default Login;
-
-/******  3338575f-7380-446a-aaec-5c5a9d9a4762  *******/

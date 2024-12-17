@@ -30,10 +30,13 @@ const Register = () => {
         }
       );
       const data = await response.json();
+      console.log("data", data);
       if (data.error) {
         setError(data.error);
       } else {
         setError(null);
+        localStorage.setItem("token", data.token);
+        window.location.href = "/recipes";
       }
     } catch (error) {
       console.error(error);
