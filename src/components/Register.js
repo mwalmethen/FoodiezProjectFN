@@ -6,62 +6,69 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import "../css/RegistrationForm.css";
 
-const validationSchema = Yup.object({
-  fullName: Yup.string().required("Full Name is required"),
-  email: Yup.string().email("Invalid email").required("Email is required"),
-  password: Yup.string()
-    .min(6, "Password must be at least 6 characters")
-    .required("Password is required"),
-  confirmPassword: Yup.string()
-    .oneOf([Yup.ref("password"), null], "Passwords must match")
-    .required("Confirm Password is required"),
-});
 const Register = () => {
-  const formik = useFormik({
-    initialValues: {
-      fullName: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    },
-    validationSchema,
-    onSubmit: (values) => {
-      console.log(values);
-    },
-  });
+  const [name, setname] = React.useState("");
+
+  const [password, setPassword] = React.useState("");
+  const [confirmPassword, setConfirmPassword] = React.useState("");
+  const [error, setError] = React.useState(null);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (password !== confirmPassword) {
+      setError("Passwords must match");
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        "http://192.168.2.108:3000/foodiez/api/auth/signup",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, password }),
+        }
+      );
+      const data = await response.json();
+      console.log("data", data);
+      if (data.error) {
+        setError(data.error);
+      } else {
+        setError(null);
+        localStorage.setItem("token", data.token);
+        window.location.href = "/recipes";
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <>
       <h1 className="headline">Registration Form </h1>
       <div className="form-container">
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="fullName">Full Name</label>
+            <label htmlFor="name">Username</label>
             <input
               type="text"
-              id="fullName"
-              name="fullName"
-              onChange={formik.handleChange}
-              value={formik.values.fullName}
+              id="name"
+              name="name"
+              value={name}
+              onChange={(event) => setname(event.target.value)}
             />
-            {formik.touched.fullName && formik.errors.fullName ? (
-              <div className="error-message">{formik.errors.fullName}</div>
-            ) : null}
           </div>
 
-          <div>
+          {/* <div>
             <label htmlFor="email">Email</label>
             <input
-              type="text"
+              type="email"
               id="email"
               name="email"
-              onChange={formik.handleChange}
-              value={formik.values.email}
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
             />
-            {formik.touched.email && formik.errors.email ? (
-              <div className="error-message">{formik.errors.email}</div>
-            ) : null}
-          </div>
+          </div> */}
 
           <div>
             <label htmlFor="password">Password</label>
@@ -69,12 +76,9 @@ const Register = () => {
               type="password"
               id="password"
               name="password"
-              onChange={formik.handleChange}
-              value={formik.values.password}
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
             />
-            {formik.touched.password && formik.errors.password ? (
-              <div className="error-message">{formik.errors.password}</div>
-            ) : null}
           </div>
 
           <div>
@@ -83,15 +87,12 @@ const Register = () => {
               type="password"
               id="confirmPassword"
               name="confirmPassword"
-              onChange={formik.handleChange}
-              value={formik.values.confirmPassword}
+              value={confirmPassword}
+              onChange={(event) => setConfirmPassword(event.target.value)}
             />
-            {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
-              <div className="error-message">
-                {formik.errors.confirmPassword}
-              </div>
-            ) : null}
           </div>
+
+          {error && <div className="error-message">{error}</div>}
 
           <div className="Formik-button">
             <button type="submit">Register</button>

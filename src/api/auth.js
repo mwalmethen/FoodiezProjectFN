@@ -1,10 +1,17 @@
 import instance from "./axios";
 const register = async (formData) => {
-  const data = await instance.post("/register", formData);
-  // setToken("token", data.token);
-  localStorage.setItem("token", data.token);
-  console.log("register data", data);
-  return data;
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  const body = JSON.stringify(formData);
+  const res = await instance.post("/register", body, config);
+
+  if (res.data.token) {
+    localStorage.setItem("token", res.data.token);
+  }
+  return res.data;
 };
 const login = async (formData) => {
   const data = await instance.post("/login", formData);

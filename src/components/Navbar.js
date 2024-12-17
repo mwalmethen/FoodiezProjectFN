@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../css/navbar.css";
+import Logout from "./LogOut";
 
 export const Navbar = () => {
   const [menuActive, setMenuActive] = useState(false);
-
+  const token = localStorage.getItem("token");
   return (
     <div className="Nav-container">
       <div className="logo-text-nav">Foodiez</div>
@@ -37,20 +38,27 @@ export const Navbar = () => {
             Recipes
           </NavLink>
         </h2>
-        <h2>
-          <NavLink
-            to="/profile"
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            MyProfile
-          </NavLink>
-        </h2>
+        {token && (
+          <h2>
+            <NavLink
+              to="/profile"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              MyProfile
+            </NavLink>
+          </h2>
+        )}
+
+        {token && (
+          <div>
+            <Logout />
+          </div>
+        )}
       </div>
       <div
         className={`Nav-toggle ${menuActive ? "active" : ""}`}
         onClick={() => setMenuActive(!menuActive)}
       >
-        <div></div>
         <div></div>
         <div></div>
       </div>
