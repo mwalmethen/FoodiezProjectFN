@@ -216,13 +216,12 @@ body {
   text-align: center;
   color: white;
   width: 60%;
-  height: 900px;
+  height: 750px;
   position: relative;
   right: -19%;
   padding: 20px;
   margin-top: 20px;
   border-radius: 32px;
-  overflow-y: scroll;
   animation: fadeSlideIn 0.7s ease-in-out forwards;
 }
 .category-div {

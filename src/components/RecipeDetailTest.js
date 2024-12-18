@@ -8,7 +8,7 @@ const RecipeDetailTest = () => {
 
   return (
     <div className="main-recipe-div">
-      <div className="recipe-card">
+      <div>
         <div className="recipes-div-detail">
           <img className="recipe-images-detail" src={recipe.image} />
           <h1>{recipe.name}</h1>

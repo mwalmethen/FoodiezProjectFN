@@ -1,7 +1,7 @@
 import instance from "./axios";
 
 async function getAllIngredients() {
-  const response = await instance.get("/foodiez/api/ingredients");
+  const response = await instance.get("/ingredients");
   console.log(response);
   return response;
 }
@@ -19,12 +19,12 @@ async function updateIngredientById(id, updatedData) {
   }
 }
 async function addIngredient(data) {
-  const response = await instance.post("/foodiez/api/ingredients", data);
+  const response = await instance.post("/ingredients", data);
   console.log("addIngredient", response);
   return response;
 }
 async function deleteIngredient(id) {
-  const response = await instance.delete(`/foodiez/api/ingredients/${id}`);
+  const response = await instance.delete(`/ingredients/${id}`);
   console.log("deleteIngredient", response);
   return response;
 }

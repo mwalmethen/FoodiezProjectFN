@@ -7,7 +7,7 @@ import * as Yup from "yup";
 import "../css/RegistrationForm.css";
 
 const Register = () => {
-  const [name, setname] = React.useState("");
+  const [name, SetName] = React.useState("");
 
   const [password, setPassword] = React.useState("");
   const [confirmPassword, setConfirmPassword] = React.useState("");
@@ -55,7 +55,7 @@ const Register = () => {
               id="name"
               name="name"
               value={name}
-              onChange={(event) => setname(event.target.value)}
+              onChange={(event) => SetName(event.target.value)}
             />
           </div>
 

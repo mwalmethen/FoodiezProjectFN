@@ -10,11 +10,25 @@
   left: 10%;
   overflow: scroll;
 }
+.main-div-recipes-list {
+  width: 100%;
+  height: 100%;
+  transform: translateY(50px); /* Start slightly below */
+  opacity: 0; /* Initially hidden */
+  animation: fadeSlideIn 0.7s ease-in-out forwards; /* 2-second combined animation */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; /* Allow scrolling within the content area */
+  padding: 20px;
+}
 .category-filter {
   position: relative;
-  right: -25%;
-  margin-bottom: 100px;
-  margin-top: 100px;
+  right: -41%;
+  margin-top: -10%;
+  animation: fadeSlideIn 0.7s ease-in-out forwards;
 }
 .type-selector {
   width: 300px;
@@ -29,25 +43,32 @@
 }
 .btn-btn-refresh {
   position: relative;
-  right: -43.5%;
-  border-radius: 40px;
-  width: 200px;
-  margin-top: 15px;
-  margin-bottom: 80px;
+  right: -46.5%;
+  border-radius: 10px;
+  width: 150px;
+  margin-top: 2%;
+  animation: fadeSlideIn 0.7s ease-in-out forwards;
+}
+.type-button {
+  border-radius: 10px;
+  width: 150px;
 }
 .text-h3 {
   text-align: center;
-  color: orange;
+  color: white;
   position: relative;
+  right: -3%;
 }
 .text-h3-div {
   background-color: rgb(28, 28, 45);
-  width: 300px;
-  height: 70px;
+  width: 700px;
+  animation: fadeSlideIn 0.7s ease-in-out forwards;
+  height: 120px;
   padding: 10px;
   border-radius: 30px;
   position: relative;
-  right: -40%;
+  right: -26%;
+  font-size: 30px;
   margin-bottom: 50px;
   margin-top: 50px;
 }
@@ -62,6 +83,27 @@
 .chef-filter {
   display: flex;
   flex-direction: row;
+  background-color: rgb(28, 28, 45);
+  position: relative;
+  padding: 20px;
+  right: -36%;
+  animation: fadeSlideIn 0.7s ease-in-out forwards;
+  text-align: center;
+  bottom: 20%;
+  width: 400px;
+  height: 200px;
+  border-radius: 20px;
+}
+.button-label {
+  position: relative;
+  right: -12%;
+  display: flex;
+  gap: 20px;
+  height: 50px;
+}
+.all {
+  position: relative;
+  left: -400%;
 }
 .chef-filter > .recipes-div {
   width: 90%;

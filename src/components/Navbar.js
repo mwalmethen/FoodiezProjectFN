@@ -35,7 +35,7 @@ export const Navbar = () => {
             to="/recipes"
             className={({ isActive }) => (isActive ? "active" : "")}
           >
-            Recipes
+            MyRecipes
           </NavLink>
         </h2>
         {token && (
@@ -44,7 +44,7 @@ export const Navbar = () => {
               to="/profile"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
-              MyProfile
+              MyRecipes
             </NavLink>
           </h2>
         )}

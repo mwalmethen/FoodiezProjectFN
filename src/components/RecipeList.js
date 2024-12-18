@@ -64,14 +64,35 @@ const RecipeList = () => {
   // }
 
   return (
-    <div>
+    <div className="main-div-recipes-list">
       <Formik initialValues={{ recipes: "" }}>
         <Form>
-          <div class="chef-filter">
-            <div className="text-h3-div">
-              <h2 className="text-h3">Search A Recipe</h2>
+          <div className="text-h3-div">
+            <h2 className="text-h3">Search For A Recipe</h2>
+          </div>
+
+          <div className="chef-filter">
+            <div className="button-label">
+              {/* "All" Button */}
+              <button
+                onClick={handleChef} // Pass an empty value to handleChef
+                className="type-button"
+              >
+                All
+              </button>
+
+              {/* Button for the Authorized Chef */}
+              <button
+                onClick={() => handleChef(isAuthorized?.name)} // Pass the chef's name
+                className="type-button"
+              >
+                {isAuthorized?.name || "My Recipes"}{" "}
+                {/* Fallback to "Chef" if no name */}
+              </button>
             </div>
-            <div>
+          </div>
+          {/* <div class="chef-filter">
+            <div className="text-label">
               <label>
                 <Field
                   onClick={handleChef}
@@ -80,7 +101,7 @@ const RecipeList = () => {
                   value=""
                   className="type"
                 />
-                <span>All</span>
+                <span className="all">All</span>
               </label>
               <label>
                 <Field
@@ -93,7 +114,7 @@ const RecipeList = () => {
                 <span>{isAuthorized?.name}</span>
               </label>
             </div>
-          </div>
+          </div> */}
           <div className="category-filter">
             <Field
               as="select"
