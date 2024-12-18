@@ -1,0 +1,30 @@
+.new-recipe {
+  height: 800px;
+  width: 600px;
+  background: #1e1e2f;
+  position: absolute;
+  left: 25%;
+  top: 75px;
+}
+
+.text-h3 {
+  padding: 15px;
+}
+
+.text-h3-box {
+  width: 200px;
+  padding-left: 15px;
+  margin-left: 30px;
+}
+
+.textarea {
+  height: 150px;
+  width: 200px;
+}
+.steps {
+  position: absolute;
+  top: 360px;
+  left: 200px;
+  height: 200px;
+  width: 200px;
+}

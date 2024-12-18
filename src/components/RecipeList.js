@@ -83,7 +83,10 @@ const RecipeList = () => {
 
               {/* Button for the Authorized Chef */}
               <button
-                onClick={() => handleChef(isAuthorized?.name)} // Pass the chef's name
+                onClick={handleChef}
+                type="radio"
+                name="chef"
+                value={isAuthorized?.name} // Pass the chef's name
                 className="type-button"
               >
                 {isAuthorized?.name || "My Recipes"}{" "}

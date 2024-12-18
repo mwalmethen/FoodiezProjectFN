@@ -60,11 +60,15 @@ const RecipeItem = ({ recipe, isAuthorized, refetch }) => {
       <span className="ingredient-name">{ingredient.name}</span>
     </div>
   ));
+  let steps = recipe.steps.map((step) => (
+    <div className="step">{step.step}</div>
+  ));
   let recipe_popover = (
     <div id={recipe.name} popover="">
       <div className="details">
         <div class="recipe-name">{recipe.name}</div>
         <div class="ingredients">{ingredients}</div>
+        <div class="steps">{steps}</div>
         {options}
       </div>
     </div>

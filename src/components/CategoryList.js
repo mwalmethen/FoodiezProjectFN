@@ -37,9 +37,11 @@ const CategoryList = () => {
         <h2 className="category-text"> Explore Our Categories </h2>
       </div>
       <div className="category-list">
-        {data?.map((category) => (
-          <CategoryDetail key={category.id} category={category} />
-        ))}
+        <div className="category-container">
+          {data?.allCategories.map((category) => (
+            <CategoryDetail key={category.id} category={category} />
+          ))}
+        </div>
         <div className="form-container">
           <h2 className="headline2">Add a Category</h2>
           <label htmlFor="category">Category Name</label>
