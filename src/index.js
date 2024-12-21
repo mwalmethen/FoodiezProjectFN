@@ -13,6 +13,7 @@ import RecipeList from "./components/RecipeList";
 import User from "./components/User";
 import RecipeDetailTest from "./components/RecipeDetailTest";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import AppLoading from "./components/AppLoading";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
         <Home />,
       </div>
     ),
+  },
+  {
+    path: "/AppLoading",
+    element: <AppLoading />,
   },
   {
     path: "/register",

@@ -10,12 +10,25 @@ body {
   overflow-y: hidden;
   overflow-x: hidden;
 }
+
+select {
+  background: none;
+  background: #1e1e2f;
+  color: #fff;
+    border-radius: 10px;
+    padding-inline: 5px;
+    font-size: x-large;
+}
 .category-container {
-  position: relative;
-  left: -10%;
   height: 400px;
-  width: 300px;
+  width: 75%;
   margin-bottom: 100px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: relative;
+  margin-bottom: 200px;
 }
 .main-category-div {
   width: 100%;
@@ -153,6 +166,7 @@ body {
   bottom: -33%;
 }
 .category-home-div {
+  margin-top: 60px;
   background-color: rgb(28, 28, 45);
   border-radius: 50px;
   font-size: 30px;
@@ -161,9 +175,9 @@ body {
   color: white;
   position: relative;
   right: -26%;
-  margin-top: 40px;
+
   width: 700px;
-  margin-top: 90px;
+
   animation: fadeSlideIn 0.7s ease-in-out forwards;
 }
 .category-home-div2 {
@@ -212,6 +226,7 @@ body {
 }
 
 .recipes-div {
+  height: 270px;
   background-color: rgb(28, 28, 45);
   text-align: center;
   color: white;

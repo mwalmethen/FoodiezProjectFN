@@ -19,8 +19,8 @@ const CategoryList = () => {
   const mutation = useMutation({
     mutationKey: ["Data"],
     mutationFn: (formData) => addCategory(formData),
+    onSuccess: () => alert(` ${formData.category} category is created `),
   });
-
   const handleSubmit = () => {
     // Prepare FormData
     const formData = new FormData();
@@ -36,34 +36,34 @@ const CategoryList = () => {
       <div className="category-home-div">
         <h2 className="category-text"> Explore Our Categories </h2>
       </div>
+      <div className="form-container">
+        <h2 className="headline2">Add a Category</h2>
+        <label htmlFor="category">Category Name</label>
+        <input
+          name="category"
+          type="text"
+          placeholder="Category Name"
+          id="category"
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <label htmlFor="image">Upload Image</label>
+        <input
+          name="image"
+          type="file"
+          onChange={(e) => setImage(e.target.files[0])}
+          id="image"
+        />
+
+        <button type="submit" onClick={handleSubmit}>
+          Submit
+        </button>
+      </div>
       <div className="category-list">
         <div className="category-container">
           {data?.allCategories.map((category) => (
             <CategoryDetail key={category.id} category={category} />
           ))}
-        </div>
-        <div className="form-container">
-          <h2 className="headline2">Add a Category</h2>
-          <label htmlFor="category">Category Name</label>
-          <input
-            name="category"
-            type="text"
-            placeholder="Category Name"
-            id="category"
-            onChange={(e) => setName(e.target.value)}
-          />
-
-          <label htmlFor="image">Upload Image</label>
-          <input
-            name="image"
-            type="file"
-            onChange={(e) => setImage(e.target.files[0])}
-            id="image"
-          />
-
-          <button type="submit" onClick={handleSubmit}>
-            Submit
-          </button>
         </div>
 
         {/* <div className="main-form">

@@ -25,4 +25,21 @@ async function deleteRecipe(id) {
   console.log("deleteRecipe", response);
   return response;
 }
-export { getAllRecipes, updateRecipeById, addRecipe, deleteRecipe };
+
+async function likeRecipe(likedData) {
+  try {
+    let { id, review } = likedData;
+    console.log("likedData ", likedData);
+    console.log("review", likedData.review);
+    console.log("review", likedData.id);
+
+    const response = await instance.put(`/recipes/like/${id}`, { review });
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.error("error Like recipe", error);
+    throw error;
+  }
+}
+
+export { getAllRecipes, updateRecipeById, addRecipe, deleteRecipe, likeRecipe };

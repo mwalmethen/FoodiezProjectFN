@@ -8,6 +8,7 @@ import { Navigate, useNavigate } from "react-router";
 // import { checkToken } from '../API/storage'
 import { getAllRecipes } from "../api/recipe";
 import "../css/recipe.css";
+import AppLoading from "./AppLoading";
 
 const RecipeList = () => {
   const [chef, setChef] = useState("");
@@ -22,6 +23,10 @@ const RecipeList = () => {
     queryFn: getAllRecipes,
     enabled: true,
   });
+
+  if (isFetching) {
+    return <AppLoading />;
+  }
 
   // >> Array of Transactions Objects
   const isAuthorized = { id: data?.id, name: data?.name };
@@ -93,6 +98,22 @@ const RecipeList = () => {
                 {/* Fallback to "Chef" if no name */}
               </button>
             </div>
+            <div className="category-filter">
+              <Field
+                as="select"
+                name="category"
+                className="type-selector"
+                onChange={(e) => setCategory(e.target.value)}
+                value={category}
+              >
+                <option value="">All</option>;{categoryList}
+              </Field>
+            </div>
+            <div>
+              <button className="btn-btn-refresh" onClick={refetch}>
+                refresh
+              </button>
+            </div>
           </div>
           {/* <div class="chef-filter">
             <div className="text-label">
@@ -118,22 +139,6 @@ const RecipeList = () => {
               </label>
             </div>
           </div> */}
-          <div className="category-filter">
-            <Field
-              as="select"
-              name="category"
-              className="type-selector"
-              onChange={(e) => setCategory(e.target.value)}
-              value={category}
-            >
-              <option value="">All</option>;{categoryList}
-            </Field>
-          </div>
-          <div>
-            <button className="btn-btn-refresh" onClick={refetch}>
-              refresh
-            </button>
-          </div>
         </Form>
       </Formik>
       <div className="recipe-list">
